@@ -1,0 +1,17 @@
+
+@import url('https://fonts.googleapis.com/css?family=Inter:400,500,600,700&display=swap');
+body {
+  margin: 0;
+  font-family: 'Inter';
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  padding: 0;
+  display: flex;
+  flex-direction:column;
+  align-items: center;
+  justify-content:center;
+  height: 100vh;
+  width: 100wh;
+  overflow: hidden;
+  background:-webkit-linear-gradient(left, #07937e, #44d0bb);
+}
