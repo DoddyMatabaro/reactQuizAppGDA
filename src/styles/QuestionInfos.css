@@ -1,0 +1,13 @@
+.quiz-infos{
+    display:flex;
+}
+
+.quiz-index{
+    flex:1;
+    text-align:left;
+}
+
+.quiz-timer{
+    flex:1;
+    text-align:right;
+}
