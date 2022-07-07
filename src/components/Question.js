@@ -17,18 +17,26 @@ const Question = () => {
     //     return () => clearInterval(interval);
     //   }, []);
       const [comp, setComp] = useState(0);
-      const handler = (()=>{
+      const [selectAnswer, setSelectAnswer] = useState([]);
+      const [value, setValue] = useState(0);
+
+      const takeSelectedAnswer = (answer)=>{
+          setSelectAnswer(selectAnswer.push(answer))
+      }
+
+      const handler = ((reallyAnswer)=>{
           setComp(comp + 1);
+          takeSelectedAnswer(reallyAnswer);
       })
-     
+      const takeValue = (val)=>{(setValue(val))}   
+      console.log("la valeur est " +value);
     return (
         <div>  
             <QuestionHead value={base[comp].titre} />
             <QuestionInfos index={comp+1} max={base.length} timer={progressValue}/>
             {/* <ProgressBar value={progressValue} /> */}
-            <Assertion question={base[comp].reponses}/>
+            <Assertion question={base[comp].reponses} value={takeValue} />
             <ButtonsQuestion action={handler} />
-            {console.log(comp)}
             
         </div>
     );

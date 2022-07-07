@@ -6,12 +6,11 @@ function Assertion(props) {
    
   return (
     <div>
-          {props.question.map((assertion) => (
-                <div >
-                   <LabelQuestion value='1' assertion={assertion}/>
+          {props.question.map((assertion, index) => (
+                <div key={`key${index}`}>
+                   <LabelQuestion assertion={assertion} index={index} value={props.value} />
                 </div>
              ))} 
-             
     </div>
   )
 }

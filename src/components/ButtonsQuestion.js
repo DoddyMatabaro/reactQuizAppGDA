@@ -1,7 +1,8 @@
 import React from 'react'
-import '../styles/ButtonsQuestion.css'
+import '../styles/ButtonsQuestion.css' 
 
 function ButtonsQuestion(props) {
+    
   return (
     <div>
         <button>Quitter</button>
