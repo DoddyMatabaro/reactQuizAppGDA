@@ -3,7 +3,7 @@ function Libelle(titre, reponse, reponses){ //class that structed questions
     this.reponse = reponse;
     this.reponses= reponses;
   }
-  const Base = [ //questions base
+  export const base = [ //questions base
       new Libelle("Quel est le type d'un fichier javascript ?",2,[".j",".jsx", ".js",".ts"]),
       new Libelle("La syntaxe correcte pour créer un objet vide en Js est :",0, ["let monObjet = {}", "let monObjet = []", "let monObjet = ()", "let monObjet = null"]),
       // new Libelle("Ces mots permettent d'initialiser une variable, sauf :",2, ["var", "const", "function", "let"]),
@@ -19,4 +19,4 @@ function Libelle(titre, reponse, reponses){ //class that structed questions
       // new Libelle("Pour executer alert() chaque 5s, on écrira :",1, ["setInterval(alert, 5000)", "setTimeout(alert, 5)", "setInterval(alert, 5)", "forTime(alert, 5000)"]),
       // new Libelle("Le nom correct d'une variable est :",1, ["ma_variable", "ma variable", "ma-variable", "mavariable()"]),
       new Libelle("L'object JavaScript qui gére le DOM est  :",3, ["HTMLElement", "DOM", "Node", "document"])
-    ];
+];
