@@ -1,0 +1,18 @@
+div{
+    margin: 10px;
+}
+
+button{
+    margin: 0 10px;
+    width: 40%; height: 5vh;
+    cursor: pointer;
+    color: white;
+}
+
+button:first-child{
+    background-color: rgb(255, 132, 0);
+}
+
+button:last-child{
+    background-color: rgb(9, 110, 46);
+}

@@ -1,0 +1,16 @@
+
+.column{
+    display: flex;
+    border: 1px solid black;
+    margin-top: 10px;
+}
+.column:hover{
+    border: 1px solid green;
+}
+.label-radio{
+    padding-left: 20px;
+}
+
+.input-radio{
+    margin-left: 20px;
+}
