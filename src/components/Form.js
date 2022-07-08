@@ -2,11 +2,12 @@ import React from 'react'
 import '../styles/Form.css'
 import {useState} from 'react';
 
-export default function From () {
+export default function From (props) {
     const [mail, setMail] = useState("");
     const [name, setName] = useState("");
-    const [errorName, setErrorName] = useState("");
-    const [errorMail, setErrorMail] = useState("");
+    const [etatVal, setEtatVal] = useState(false);
+    const [errorName, setErrorName] = useState(" ");
+    const [errorMail, setErrorMail] = useState(" ");
     // const handeChange = (e)=>{
     //     e.preventDefault();
     // }
@@ -14,12 +15,22 @@ export default function From () {
     const validName= (value)=>{ // name validation (name != "" and name.length > 2 ) 
         value === "" ? setErrorName("Renseignez le nom") : value.length < 2 ? setErrorName("Entez un nom valide !") : setErrorName("");
         setName(value);
+        handlerClick();
     }
 
     const validMail= (value)=>{
         const regexEmail = /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/; 
         value === "" ? setErrorMail("Renseignez le mail") : !(regexEmail.test(value)) ? setErrorMail("Entez une adresse mail valide !") : setErrorMail("");
+        handlerClick();
     }
+   
+    const handlerClick = ()=>{
+        if(errorMail === "" && errorName === ""){
+            return setEtatVal(true)
+        }
+        return setEtatVal(false)
+    }
+   
   return (
     <form>  
         <label>
@@ -39,7 +50,12 @@ export default function From () {
             />
             <small>{ errorMail }</small>
         </label>
-        <input type='submit' value='Commencer' />
+        <input type='submit' value='Commencer' onClick={(e)=>{
+            e.preventDefault();
+            // console.log(etatVal);
+            handlerClick(etatVal);
+            props.action(etatVal);
+        }} />
     </form>
   )
 }
