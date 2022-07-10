@@ -8,11 +8,14 @@ import Score from './Score'
 function App() {
 
   const [isValidate, setIsValidate] = useState(false);
-  const [formValues, setFormValue] = useState([]);
+  const [formValues, setFormValue] = useState(0);
+  const [identity, setIdentity] = useState([]);
   const takeFormValue = ((score)=>{
-    setFormValue( arr => [...arr, score]);
+    setFormValue(score);
   })
-
+  const takeIdentity = (name, mail)=>{
+      setIdentity(arr=>[...arr, name,mail]);
+  }
   const testValidation = (etat)=>{
     setIsValidate(etat);
   }
@@ -20,20 +23,18 @@ function App() {
   const testIsOver = (etat)=>{
     setIsOver(etat);
   }
-  console.log(isOver);
   return (
     <div className="App">
           {!isValidate && 
           <div>
            <Header /> 
-           <Form action={testValidation} /> 
+           <Form action={testValidation} infos={takeIdentity} /> 
            </div>}
-          {isValidate && <Question action={testIsOver} form={takeFormValue} over={testIsOver}/> }
-          
-          {isOver && <Score />}
+          {!isOver&&(isValidate && <Question action={testIsOver} form={takeFormValue} over={testIsOver} /> )}
+
+          {isOver && <Score value={[formValues]} auth={identity}/>}
           
     </div>
   );
 }
-
 export default App;

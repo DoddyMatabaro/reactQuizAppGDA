@@ -1,0 +1,13 @@
+progress{
+    margin: 0;
+    width: 90%;
+}
+progress::-moz-progress-bar {
+    background-color: rgb(228, 228, 228); 
+}
+progress::-webkit-progress-value {
+    background-color: rgb(138, 125, 125) ;
+} 
+progress::-webkit-progress-bar {
+    background-color: rgb(228, 228, 228)
+}

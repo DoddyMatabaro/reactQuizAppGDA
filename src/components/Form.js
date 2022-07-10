@@ -8,29 +8,24 @@ export default function From (props) {
     const [etatVal, setEtatVal] = useState(false);
     const [errorName, setErrorName] = useState(" ");
     const [errorMail, setErrorMail] = useState(" ");
-    // const handeChange = (e)=>{
-    //     e.preventDefault();
-    // }
 
     const validName= (value)=>{ // name validation (name != "" and name.length > 2 ) 
         value === "" ? setErrorName("Renseignez le nom") : value.length < 2 ? setErrorName("Entez un nom valide !") : setErrorName("");
         setName(value);
         handlerClick();
     }
-
     const validMail= (value)=>{
         const regexEmail = /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/; 
         value === "" ? setErrorMail("Renseignez le mail") : !(regexEmail.test(value)) ? setErrorMail("Entez une adresse mail valide !") : setErrorMail("");
+        setMail(value);
         handlerClick();
     }
-   
     const handlerClick = ()=>{
         if(errorMail === "" && errorName === ""){
-            return setEtatVal(true)
+            return setEtatVal(true);
         }
-        return setEtatVal(false)
+        return setEtatVal(false);
     }
-   
   return (
     <form>  
         <label>
@@ -44,7 +39,7 @@ export default function From (props) {
         </label><br/>
         <label>
             Mail
-            <input type="mail" 
+            <input type="mail" autoComplete='true'
                     // value ={mail}
                     onChange={(e)=>validMail(e.target.value)}
             />
@@ -55,6 +50,7 @@ export default function From (props) {
             // console.log(etatVal);
             handlerClick(etatVal);
             props.action(etatVal);
+            props.infos(name,mail)
         }} />
     </form>
   )
