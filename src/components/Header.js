@@ -6,8 +6,7 @@ const Header = () => {
         <div>
             <h2 className="title">JavaScript Quiz</h2>
             <p className="subtitle">
-                Évaluez vos connaissances en JavaScript en r
-                épondant aux questions que nous avons 
+                Évaluez vos connaissances en JavaScript en répondant aux questions que nous avons 
                 spécialement sélectionnées pour vous.
                  C'est fun et c'est gratuit.
             </p>

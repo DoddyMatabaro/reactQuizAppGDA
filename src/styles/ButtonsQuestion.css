@@ -7,12 +7,16 @@ button{
     width: 40%; height: 5vh;
     cursor: pointer;
     color: white;
+    font-weight: bold;
 }
 
 button:first-child{
-    background-color: rgb(255, 132, 0);
+    background-color: #9b4d48;
+
 }
 
 button:last-child{
-    background-color: rgb(9, 110, 46);
+    background-color: #2e2d39;
+    color: #cdc3c4;
+
 }

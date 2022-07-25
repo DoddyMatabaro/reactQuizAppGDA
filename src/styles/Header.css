@@ -1,7 +1,15 @@
+div{
+    justify-content: center;
+    text-align: center;
+
+}
+
 .title{
     padding-top: 2em;
 }
 
 .subtitle{
-    padding: 0 3rem;
+    font-weight: bold;
+    /* max-width: 320px; */
+    padding: auto;
 }

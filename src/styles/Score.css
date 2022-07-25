@@ -1,4 +1,11 @@
-image{
-    font-size: 300px;
-    width: 100px;
+.image{
+    /* font-size: 300px;
+    width: 100px; */
+    margin-top: 50px;
+}
+
+.accueil{
+    margin: 40px;
+    color:#4b888b;
+    background-color: #4b888b;
 }

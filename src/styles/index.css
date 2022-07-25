@@ -13,5 +13,5 @@ body {
   height: 100vh;
   width: 100wh;
   overflow: hidden;
-  background:-webkit-linear-gradient(left, #07937e, #44d0bb);
+  background:-webkit-linear-gradient(buttom, rgb(246,208,4), rgb(205,195,196));
 }

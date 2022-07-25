@@ -19,11 +19,14 @@ input[type='submit']{
     width: 60%;
     height: 35px;
     border: none;
-    background-color: rgb(132, 226, 65)
+    background-color: #2e2d39;
+    color: #cdc3c4;
+    font-weight: bold;
+
 }
 input[type='submit']:hover{
-    background-color:black;
-    color:#fff;
+    background-color:#54979d;
+    color: #2e2d39;
 }
 input{
     height: 40px;

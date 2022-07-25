@@ -8,13 +8,11 @@ import Assertion from './Assertion';
 import ButtonsQuestion from './ButtonsQuestion';
 
 const Question = (props) => {
-    const [progressValue, setProgressValue] = useState(15);
+    const [progressValue, setProgressValue] = useState(60);
     useEffect(() => {
         const interval = setInterval(() => {
           setProgressValue(progressValue => progressValue - 1);
-        }, 1000);
-        
-
+        }, 1000);     
         return () => clearInterval(interval);
       }, []);
       const [comp, setComp] = useState(0);
@@ -28,7 +26,10 @@ const Question = (props) => {
       const handler = (()=>{
         if(value !==''){takeSelectedAnswer(value)};
           setComp(comp + 1);
-          setProgressValue(15);
+          setProgressValue(60);
+      })
+      const quit = (()=>{
+        setComp(base.length );
       })
       const takeValue = (val)=>{(setValue(val))}   
       let calcScore = ((elts)=>{
@@ -49,8 +50,8 @@ const Question = (props) => {
             <QuestionInfos index={comp+1} max={base.length} timer={progressValue} />
             <ProgressBar value={progressValue} />
             <Assertion question={base[comp].reponses} value={takeValue} />
-            <ButtonsQuestion action={handler} />
-            {  progressValue >= 0 ? console.log("pas encore") : handler() }
+            <ButtonsQuestion action={[handler, quit]} />
+            {  progressValue >= 0 ? null: handler() }
             </div>) }            
         </div>
     );

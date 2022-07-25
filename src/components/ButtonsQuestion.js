@@ -5,10 +5,10 @@ function ButtonsQuestion(props) {
     
   return (
     <div>
-        <button >Quitter</button>
+        <button onClick={(()=>props.action[1]())}>Quitter</button>
         <button onClick={(()=>{
-            props.action();
-            })} desabled>Suivant</button>
+            props.action[0]();
+            })} desabled={true}>Suivant</button>
     </div>
   )
 }

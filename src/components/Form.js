@@ -10,13 +10,17 @@ export default function From (props) {
     const [errorMail, setErrorMail] = useState(" ");
 
     const validName= (value)=>{ // name validation (name != "" and name.length > 2 ) 
-        value === "" ? setErrorName("Renseignez le nom") : value.length < 2 ? setErrorName("Entez un nom valide !") : setErrorName("");
+        value === "" ? setErrorName("Renseignez le nom") : 
+        value.length < 2 ? setErrorName("Entez un nom valide !") : 
+        setErrorName("");
         setName(value);
         handlerClick();
     }
-    const validMail= (value)=>{
+    const validMail= (value)=>{ // mail validation
         const regexEmail = /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/; 
-        value === "" ? setErrorMail("Renseignez le mail") : !(regexEmail.test(value)) ? setErrorMail("Entez une adresse mail valide !") : setErrorMail("");
+        value === "" ? setErrorMail("Renseignez le mail") : 
+        !(regexEmail.test(value)) ? setErrorMail("Entez une adresse mail valide !") : 
+        setErrorMail("");
         setMail(value);
         handlerClick();
     }
@@ -30,24 +34,22 @@ export default function From (props) {
     <form>  
         <label>
             Nom
-            <input type="text"
+            <input type="text" placeholder='Entrez votre nom(ex.  Doddy Matabaro) '
                     value ={name}
                     onChange={(e)=>validName(e.target.value)}
             />
-            {/* {console.log(error)} */}
             <small>{ errorName }</small>
         </label><br/>
         <label>
             Mail
-            <input type="mail" autoComplete='true'
+            <input type="mail"  placeholder="Entrez votre adresse mail(ex. doddy@gda.kda)"
                     // value ={mail}
                     onChange={(e)=>validMail(e.target.value)}
             />
             <small>{ errorMail }</small>
         </label>
-        <input type='submit' value='Commencer' onClick={(e)=>{
+        <input type='submit' value='Commencer'  onClick={(e)=>{
             e.preventDefault();
-            // console.log(etatVal);
             handlerClick(etatVal);
             props.action(etatVal);
             props.infos(name,mail)

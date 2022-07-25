@@ -7,7 +7,9 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faCircleCheck, faCircleXmark } from '@fortawesome/free-solid-svg-icons'
 
 function Score(props) {
-    const element = <FontAwesomeIcon icon={props.value >= (base.length /2) ? faCircleXmark : faCircleCheck} size="6x" className="image"  color="green"  />
+    const element = <FontAwesomeIcon icon={props.value >= (base.length /2) ? faCircleCheck : 
+     faCircleXmark} size="6x" className="image"  
+     color={props.value >= (base.length /2) ? "#9aca19"  : "#9b4d48" }  />
     // const clap = new UIFx(
     //     clapclap,{
     //         volume: 0.4,
@@ -25,10 +27,10 @@ function Score(props) {
         <h5>{props.value} / {base.length}</h5>
         {/* {clap.play()} */}
         <div>
-            <button type='submit' onClick={refreshApp}>Accueil</button>
+            <button className='accueil' type='submit' onClick={refreshApp}>Accueil</button>
         </div>
     </div>
   )
 }
 
-export default Score
+export default Score 

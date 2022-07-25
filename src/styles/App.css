@@ -1,11 +1,11 @@
 .App {
   text-align: center;
   width: 400px; min-height: 65vh;
-  background-color: #FBC638;
+  background-color: #f6d004;
   border: none;
   border-radius: 5px;
   /* overflow: hidden; */
-  box-shadow: rgba(0, 0, 0, 0.56) 0px 22px 70px 4px;
+  box-shadow: rgba(160, 54, 54, 0.56) 0px 12px 10px 4px;
   padding: 20px;
 }
 
